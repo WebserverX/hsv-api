@@ -1,5 +1,5 @@
 const p = new URLSearchParams(window.location.search);
-export const api = {
+const api = {
     data1: null,
     data2: null,
 
@@ -55,7 +55,7 @@ async function indexMain() {
     await api.init();
 }
 
-export async function sortData() {
+async function sortData() {
     let data = null;
     if (p.has("order")) {
         const order = p.get("order");
