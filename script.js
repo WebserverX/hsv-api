@@ -78,7 +78,7 @@ export async function sortData() {
 
 async function apiMain() {
     const data = sortData();
-    if (data !== null) {
+    if (data !== null && document.querySelector("body").id === "api") {
         api.writeToPage(data);
     }
 }
