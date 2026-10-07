@@ -35,7 +35,7 @@ export const api = {
         return api.data1;
     },
     writeToPage: (data) => {
-        document.textContent = JSON.stringify(data);
+        document.body.textContent = JSON.stringify(data);
     },
 };
 
@@ -70,7 +70,7 @@ export async function sortData() {
         } else if (order === "full") {
             data = api.selectFullData();
         } else {
-            document.textContent = "Something is wrong with your URL!";
+            document.body.textContent = "Something is wrong with your URL!";
         }
     }
     return data;
