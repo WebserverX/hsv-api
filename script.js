@@ -35,7 +35,7 @@ const api = {
         return api.data1;
     },
     writeToPage: (data) => {
-        document.body.textContent = JSON.stringify(data);
+        document.textContent = JSON.stringify(data);
     },
 };
 
@@ -70,7 +70,7 @@ async function apiMain() {
         } else if (order === "full") {
             data = api.selectFullData();
         } else {
-            document.body.textContent = "Something is wrong with your URL!";
+            document.textContent = "Something is wrong with your URL!";
         }
     }
     if (data !== null) {
