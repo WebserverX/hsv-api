@@ -1,5 +1,5 @@
 const p = new URLSearchParams(window.location.search);
-const api = {
+export const api = {
     data1: null,
     data2: null,
 
@@ -55,7 +55,7 @@ async function indexMain() {
     await api.init();
 }
 
-async function apiMain() {
+export async function sortData() {
     let data = null;
     if (p.has("order")) {
         const order = p.get("order");
@@ -73,6 +73,11 @@ async function apiMain() {
             document.textContent = "Something is wrong with your URL!";
         }
     }
+    return data;
+}
+
+async function apiMain() {
+    const data = sortData();
     if (data !== null) {
         api.writeToPage(data);
     }
